@@ -9,7 +9,7 @@ import pickle
 # for L in range(0, len(k)+1):
 # 	for subset in itertools.combinations(k, L):
 # 		print(subset)
-print "started"
+print ("started")
 total = 79
 x = 13
 y = 39
@@ -61,9 +61,9 @@ j = ['tany','tanx','sinx','siny','cosy','cosx','powxy','powyx','factx','facty','
 
 #make a list of all the combinations
 mynum = []
-for x in xrange(1, len(j)+1):
-	mynum += itertools.combinations(j,x)
-print len(mynum)
+for x in range(1, len(j)+1):
+	mynum += combinations(j,x)
+print (len(mynum))
 # mynumpick = open('mynumpick.pickle', 'wb')
 # pickle.dump(mynum, mynumpick)
 
@@ -71,7 +71,7 @@ print len(mynum)
 # upmy = pickle.load(upmy)
 
 # # print mynum 
-print "about to start"
+print ("about to start")
 #filter
 limit = 52
 valid_combos = []
@@ -84,7 +84,7 @@ for i in upmy:
 
 # # valid_combos = [xi for i in mynum if  sum([eval(v) for v in i]) == limit]
 # #print valid_combos , "these are the valid combos"
-print "There is", len(valid_combos), "combinations"
+print ("There is", len(valid_combos), "combinations")
 
 
 # #lets get the serialization 
@@ -92,4 +92,3 @@ print "There is", len(valid_combos), "combinations"
 
 circle2 = open('circle2.pickle', 'wb')
 pickle.dump(valid_combos, circle2)
-
