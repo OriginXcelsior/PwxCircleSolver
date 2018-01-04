@@ -1,6 +1,6 @@
 # PwxCircleSolverimport itertools
 import math
-from itertools import combinations
+from itertools import combinations 
 import pandas as pd  
 import numpy as np 
 import datetime
@@ -10,7 +10,7 @@ import pickle
 # for L in range(0, len(k)+1):
 # 	for subset in itertools.combinations(k, L):
 # 		print(subset)
-print "started"
+print ("started")
 total = 31
 x = 10
 y = 10
@@ -54,20 +54,20 @@ exponent2 = y**x
 mean = add/2
 j = ['roun','mean','add2', 'sub2', 'div2', 'tim2',  'exponent2','add', 'sub', 'div', 'tim', 'exponent', 'sqrtx', 'sqrty','selfaddx','selfsubx','selfdivx','selftimx','selfexponentx','selfaddy','selfsuby','selfdivy','selftimy','selfexponenty']  
 
-print mean
+print (mean)
 for L in range(0, len(j)+1):
-	for subset in itertools.combinations(j, L):
+	for subset in combinations(j, L):
 		break #print(subset) 
 
 
 #make a list of all the combinations
 mynum = []
 for x in range(0, len(j)+1):
-	mynum += itertools.combinations(j,x)
+	mynum += combinations(j,x)
 
 
 # print mynum 
-print "about to start"
+print ("about to start")
 #filter
 limit = 11
 valid_combos = []
@@ -80,7 +80,7 @@ for i in mynum:
 
 # valid_combos = [i for i in mynum if  sum([eval(v) for v in i]) == limit]
 #print valid_combos , "these are the valid combos"
-print "There is", len(valid_combos), "combinations"
+print ("There is", len(valid_combos), "combinations")
 
 
 #lets get the serialization 
@@ -88,6 +88,4 @@ print "There is", len(valid_combos), "combinations"
 
 circle1 = open('circle1.pickle', 'wb')
 pickle.dump(valid_combos, circle1)
-
-
 
